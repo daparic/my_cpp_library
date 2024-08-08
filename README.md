@@ -13,9 +13,3 @@ colcon test-result
 make cpptestcov-compute
 make cpptestcov-report
 ```
-
-STM32 firmware:
-```
-openocd -f interface/stlink-v2.cfg -f target/stm32g0x.cfg -c init -c "reset halt" -c "flash read_bank 0 blinky-fw.bin 0 0x20000" -c "reset" -c shutdown
-openocd -f interface/stlink-v2.cfg -f target/stm32g0x.cfg -c init -c "reset halt" -c "flash write_image erase blinky-fw.bin 0x08000000" -c "reset" -c shutdown
-```
